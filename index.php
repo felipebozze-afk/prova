@@ -7,8 +7,6 @@ require_once __DIR__ . "/models/Gerente.php";
 require_once __DIR__ . "/controllers/FuncionarioController.php";
 
 $controller = new FuncionarioController($pdo);
-$mensagem = $_SESSION["mensagem"] ?? "";
-unset($_SESSION["mensagem"]);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["acao"] ?? "") === "iniciar_sessao") {
     $nomeOperador = trim($_POST["operador"] ?? "");
@@ -43,7 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["acao"] ?? "") === "excluir
     exit;
 }
 
+$mensagem = $_SESSION["mensagem"] ?? "";
+unset($_SESSION["mensagem"]);
+
 $funcionarios = $controller->listar();
-$excluirId = filter_input(INPUT_GET, "excluir", FILTER_VALIDATE_INT);
+$excluirId = isset($_GET["excluir"]) ? filter_var($_GET["excluir"], FILTER_VALIDATE_INT) : false;
 $funcionarioExcluir = $excluirId ? $controller->buscar($excluirId) : null;
 require_once __DIR__ . "/views/index.php";
