@@ -3,8 +3,9 @@ SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS
 
 COMO EXECUTAR
 Acesse http://localhost/phpmyadmin.
-Importe o arquivo banco.sql.
-Se necessário, altere usuário e senha do MySQL em config/conexao.php.
+Crie ou selecione um banco de dados ao qual seu usuário tenha acesso e importe nele o arquivo banco.sql.
+Se o nome do banco não for empresa_db, ajuste $banco em config/conexao.php.
+Se necessário, altere também usuário e senha do MySQL em config/conexao.php.
    
  Abra http://localhost/gerenciamento_funcionarios/.
 
