@@ -1,16 +1,12 @@
 SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS
 
-REQUISITOS
-- PHP 8 ou superior
-- MySQL
-
 
 COMO EXECUTAR
 Acesse http://localhost/phpmyadmin.
 Importe o arquivo banco.sql.
 Se necessário, altere usuário e senha do MySQL em config/conexao.php.
    
-6. Abra http://localhost/gerenciamento_funcionarios/.
+ Abra http://localhost/gerenciamento_funcionarios/.
 
 FUNCIONALIDADES
 - Cadastro e listagem de funcionários.
